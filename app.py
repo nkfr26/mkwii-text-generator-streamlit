@@ -62,12 +62,7 @@ class UserInterface:
                 else:
                     need_replace = False
                     count += 1
-            elif need_replace and file_name in [
-                *map(str, range(10)),
-                "-",
-                "SLASH",
-                "SPACE",
-            ]:
+            elif need_replace and file_name in [*map(str, range(10)), "-", "SLASH", "SPACE"]:
                 file_names[i] += "_"
 
         # 使用できない文字がないか検証
@@ -113,25 +108,21 @@ class UserInterface:
                 )
         elif self.selectbox == "Gradient":
             self.radio = st.sidebar.radio(
-                "radio",
-                ("Vertical", "Horizontal"),
-                horizontal=True,
-                label_visibility="collapsed",
+                "radio", ("Vertical", "Horizontal"),
+                horizontal=True, label_visibility="collapsed",
             )
             col3, col4 = st.sidebar.columns(2)
             with col3:
                 st.session_state.color_picker_top = st.session_state.top_color
                 st.color_picker(
                     "Top" if self.radio == "Vertical" else "Left",
-                    key="color_picker_top",
-                    on_change=set_top_color,
+                    key="color_picker_top", on_change=set_top_color,
                 )
             with col4:
                 st.session_state.color_picker_btm = st.session_state.btm_color
                 st.color_picker(
                     "Bottom" if self.radio == "Vertical" else "Right",
-                    key="color_picker_btm",
-                    on_change=set_btm_color,
+                    key="color_picker_btm", on_change=set_btm_color,
                 )
 
 
@@ -256,8 +247,7 @@ class TextGenerator:
         elif self.radio == "Horizontal":
             image2 = self.gradient(
                 (concated_image.height, concated_image.width),
-                st.session_state.top_color,
-                st.session_state.btm_color,
+                st.session_state.top_color, st.session_state.btm_color,
             )
             image2 = image2.transpose(Image.Transpose.ROTATE_90)
         return ImageChops.multiply(concated_image, image2)
