@@ -11,7 +11,7 @@ class UserInterface:
             st.sidebar.text_area("text_area", label_visibility="collapsed")
         )
 
-        left, right = st.sidebar.columns((5, 2), gap="medium")
+        left, right = st.sidebar.columns((3, 2), gap="medium")
         with left:
             self.slider = st.slider("Brightness", -20, 100, 0, 5) / 50 + 1
         with right:
