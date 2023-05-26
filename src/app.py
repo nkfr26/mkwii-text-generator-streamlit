@@ -1,4 +1,5 @@
 import sys
+
 sys.dont_write_bytecode = True
 
 import streamlit as st
@@ -23,7 +24,8 @@ if "color" not in st.session_state:
     st.session_state.colors = ["#ffffff" for _ in range(10**4)]
     st.session_state.top_color = "#00ff00"
     st.session_state.btm_color = "#0000ff"
-    st.session_state.index = {"orientation": 0, "mode": 0}
+    st.session_state.orientation = "Vertical"
+    st.session_state.mode = "RGB"
 
 user_interface = UserInterface()
 

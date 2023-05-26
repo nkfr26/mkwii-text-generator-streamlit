@@ -11,8 +11,8 @@ class TextImageGenerator:
         self.slider = user_interface.slider  # 0.6～3.0 (0.1刻み)
         self.selectbox = user_interface.selectbox
 
-        self.orientation = user_interface.orientation
-        self.mode = user_interface.mode
+        self.orientation = st.session_state.orientation
+        self.mode = st.session_state.mode
 
         self.should_invert = user_interface.should_invert
 

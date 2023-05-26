@@ -11,7 +11,7 @@ class UserInterface:
             st.sidebar.text_area("text_area", label_visibility="collapsed")
         )
 
-        left, right = st.sidebar.columns((3, 2), gap="medium")
+        left, right = st.sidebar.columns((7, 4), gap="medium")
         with left:
             self.slider = st.slider("Brightness", -20, 100, 0, 5) / 50 + 1
         with right:
@@ -25,7 +25,6 @@ class UserInterface:
             label_visibility="collapsed",
         )
 
-        self.orientation, self.mode = "Vertical", "RGB"
         self.set_widget_by_selectbox()
 
         left, right = st.sidebar.columns(2)
@@ -74,6 +73,6 @@ class UserInterface:
             case "Multi Color" if self.file_names:
                 Multi(self)
             case "Gradient":
-                Gradient(self)
+                Gradient()
             case _:
                 pass

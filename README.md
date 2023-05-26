@@ -1,5 +1,5 @@
 # MKWii Text Generator
-![Demo](https://github.com/NOKKY726/mkwii-text-generator/assets/117383835/ea2a5e4d-0fe6-4850-b9dd-a04143fd2df6)
+![Demo](https://github.com/NOKKY726/mkwii-text-generator/assets/117383835/896636c2-0638-4a4a-ac83-88980945ac64)
 
 ## URL
 https://nokky-mkwii-text-generator.streamlit.app
@@ -12,7 +12,8 @@ https://nokky-mkwii-text-generator.streamlit.app
 1～9 - / には2つ目のフォントが用意されており、ダブルクォート ("") で囲むことにより使用できます。  
 また、ダブルクォートで囲んだ空白は、通常の空白の4分の1の長さとなっています。  
 微調整は <> で行うことができます。(> x 5 = " ")  
-右クリックから画像を保存し、サムネイル等にご利用ください。
+右クリックから画像を保存し、サムネイル等にご利用ください。  
+テーマの変更は、右上のハンバーガーボタン -> Setting から行えます。
 
 ## Input Example
 ```

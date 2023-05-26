@@ -33,33 +33,40 @@ class Multi:
 
 
 class Gradient:
-    def __init__(self, master):
+    def __init__(self):
         upper_left, upper_right = st.sidebar.columns(2)
-        options = {"orientation": ("Vertical", "Horizontal"), "mode": ("RGB", "HSL")}
         with upper_left:
-            master.orientation = st.radio(
-                "Orientation", options["orientation"], st.session_state.index["orientation"]
+            st.session_state.orientation_radio = st.session_state.orientation
+            st.radio(
+                "Orientation", ("Vertical", "Horizontal"),
+                key="orientation_radio", on_change=self.set_orientation,
             )
-            st.session_state.index["orientation"] = options["orientation"].index(master.orientation)
         with upper_right:
-            master.mode = st.radio(
-                "Mode", options["mode"], st.session_state.index["mode"]
+            st.session_state.mode_radio = st.session_state.mode
+            st.radio(
+                "Mode", ("RGB", "HSL"),
+                key="mode_radio", on_change=self.set_mode,
             )
-            st.session_state.index["mode"] = options["mode"].index(master.mode)
 
         lower_left, lower_right = st.sidebar.columns(2)
         with lower_left:
             st.session_state.top_picker = st.session_state.top_color
             st.color_picker(
-                "Top" if master.orientation == "Vertical" else "Left",
+                "Top" if st.session_state.orientation == "Vertical" else "Left",
                 key="top_picker", on_change=self.set_top_color,
             )
         with lower_right:
             st.session_state.btm_picker = st.session_state.btm_color
             st.color_picker(
-                "Bottom" if master.orientation == "Vertical" else "Right",
+                "Bottom" if st.session_state.orientation == "Vertical" else "Right",
                 key="btm_picker", on_change=self.set_btm_color,
             )
+
+    def set_orientation(self):
+        st.session_state.orientation = st.session_state.orientation_radio
+
+    def set_mode(self):
+        st.session_state.mode = st.session_state.mode_radio
 
     def set_top_color(self):
         st.session_state.top_color = st.session_state.top_picker
