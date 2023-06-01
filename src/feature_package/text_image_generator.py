@@ -63,8 +63,9 @@ class TextImageGenerator:
         # time 00:00.000, lap " 1"  , "km/h"
         position_mapping = {
             "T": -5, "I": +2, "M": -1, "L": +2, "A": +8, "P": +1,
-            "COLON": -1, "PERIOD": -1, "K": +1, "Z": -4, "Q": +4,
-            "F": -5, "V": -5, "W": -6, "Y": -8, "C": -5, "G": -2, "LEFT": -2,
+            "COLON": -1, "PERIOD": -1, "K": +1, "X": -6, "Q": +4,
+            "F": -5, "V": -4, "W": -6, "Y": -8, "C": -5, "G": -2,
+            "O": +3, "R": +4, "Z": -4, "LEFT": -2,
         }
         image_width += position_mapping.get(file_name, 0)
 
@@ -149,7 +150,7 @@ class TextImageGenerator:
 
         return inverted_image
 
-    def generate_image(self) -> Image:
+    def run(self) -> Image:
         inverted_image = self.invert_image()
         enhancer = ImageEnhance.Brightness(inverted_image)  # 輝度調整
         return enhancer.enhance(self.slider)

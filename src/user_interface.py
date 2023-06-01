@@ -25,7 +25,7 @@ class UserInterface:
             label_visibility="collapsed",
         )
 
-        self.set_widget_by_selectbox()
+        self.set_option()
 
         left, right = st.sidebar.columns(2)
         with left:
@@ -66,7 +66,7 @@ class UserInterface:
 
         return file_names
 
-    def set_widget_by_selectbox(self) -> None:
+    def set_option(self) -> None:
         match self.selectbox:
             case "Single Color":
                 Single()

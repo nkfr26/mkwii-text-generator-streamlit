@@ -29,8 +29,8 @@ if "color" not in st.session_state:
 
 user_interface = UserInterface()
 
-text_generator = TextImageGenerator(user_interface)
-MKWii_text = text_generator.generate_image()
+text_image_generator = TextImageGenerator(user_interface)
+MKWii_text = text_image_generator.run()
 
 if not user_interface.mobile:
     st.image(MKWii_text)
