@@ -27,6 +27,7 @@ lap " 1"  00:00.000
 - Python 3.10.8
 - Streamlit 1.22.0
 - Pillow 9.5.0
+- NumPy 1.24.3
 
 ## Usage
 ```
