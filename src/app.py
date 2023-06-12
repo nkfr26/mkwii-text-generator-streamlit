@@ -22,10 +22,8 @@ st.set_page_config(
 if "color" not in st.session_state:
     st.session_state.color = "#ff0000"
     st.session_state.colors = ["#ffffff" for _ in range(10**4)]
-    st.session_state.top_color = "#00ff00"
-    st.session_state.btm_color = "#0000ff"
-    st.session_state.orientation = "Vertical"
-    st.session_state.mode = "RGB"
+    st.session_state.gradient_radio = {"orientation": "Vertical", "mode": "RGB"}
+    st.session_state.gradient_color = {"top": "#00ff00", "btm": "#0000ff"}
 
 user_interface = UserInterface()
 

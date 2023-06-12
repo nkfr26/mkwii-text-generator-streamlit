@@ -11,8 +11,8 @@ class TextImageGenerator:
         self.slider = user_interface.slider  # 0.6～3.0 (0.1刻み)
         self.selectbox = user_interface.selectbox
 
-        self.orientation = st.session_state.orientation
-        self.mode = st.session_state.mode
+        self.orientation = st.session_state.gradient_radio["orientation"]
+        self.mode = st.session_state.gradient_radio["mode"]
 
         self.should_invert = user_interface.should_invert
 
@@ -21,8 +21,8 @@ class TextImageGenerator:
             self.invert_hex(color)
             for color in st.session_state.colors
         ]
-        self.top_color = self.invert_hex(st.session_state.top_color)
-        self.btm_color = self.invert_hex(st.session_state.btm_color)
+        self.top_color = self.invert_hex(st.session_state.gradient_color["top"])
+        self.btm_color = self.invert_hex(st.session_state.gradient_color["btm"])
 
     def invert_hex(self, color) -> str:
         if not self.should_invert:
