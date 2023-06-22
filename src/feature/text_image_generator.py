@@ -2,7 +2,7 @@ import numpy as np
 import streamlit as st
 from PIL import Image, ImageChops, ImageEnhance
 
-from feature_package import gradient
+from feature import gradient
 
 
 class TextImageGenerator:
@@ -89,31 +89,20 @@ class TextImageGenerator:
                 is_LF = True
                 continue
 
-            if i == 0 or is_LF:
+            if i == 0 or is_LF:  # 一文字目 or 改行直後
                 x = 0
-                image_width = image.width
-                file_name = self.file_names[i]
-                if i == 0:  # 1文字目
-                    concated_image = image
-                elif is_LF:  # 改行直後
-                    bg = Image.new(
-                        "RGBA", (max(concated_image.width, image_width), y + 84)
-                    )
-                    bg.paste(concated_image)
-                    bg.paste(image, (0, y))
-                    concated_image = bg
-                    is_LF = False
-            else:
+                is_LF = False
+            else:  # 直前の文字を用いて「x」を求める
                 x = self.adjust_x_coordinate(x, image_width, file_name)
-                image_width = image.width
-                file_name = self.file_names[i]
-                bg = Image.new(
-                    "RGBA", (max(concated_image.width, x + image_width), y + 84)
-                )
-                bg.paste(concated_image)
-                fg = Image.new("RGBA", bg.size)
-                fg.paste(image, (x, y))
-                concated_image = Image.alpha_composite(bg, fg)
+
+            image_width = image.width
+            file_name = self.file_names[i]
+
+            bg = Image.new("RGBA", (max(x + image_width, concated_image.width), y + 84))
+            bg.paste(concated_image)
+            fg = Image.new("RGBA", bg.size)
+            fg.paste(image, (x, y))
+            concated_image = Image.alpha_composite(bg, fg)
 
         return concated_image
 

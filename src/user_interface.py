@@ -2,7 +2,7 @@ import re
 
 import streamlit as st
 
-from user_interface_package.option import Single, Multi, Gradient
+from ui.option import Single, Multi, Gradient
 
 
 class UserInterface:

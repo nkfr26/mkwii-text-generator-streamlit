@@ -5,7 +5,7 @@ sys.dont_write_bytecode = True
 import streamlit as st
 
 from user_interface import UserInterface
-from feature_package.text_image_generator import TextImageGenerator
+from feature.text_image_generator import TextImageGenerator
 
 
 st.set_page_config(
