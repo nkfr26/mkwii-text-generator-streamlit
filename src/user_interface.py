@@ -15,9 +15,8 @@ class UserInterface:
         with left:
             self.slider = st.slider("Brightness", -20, 100, 0, 5) / 50 + 1
         with right:
-            with st.container():
-                st.write("Stroke")
-                self.should_invert = st.checkbox("White")
+            st.write("Stroke")
+            self.should_invert = st.checkbox("White")
 
         self.selectbox = st.sidebar.selectbox(
             "selectbox",
