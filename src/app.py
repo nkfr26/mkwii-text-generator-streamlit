@@ -15,8 +15,8 @@ st.set_page_config(
     menu_items={
         "Get Help": None,
         "Report a bug": None,
-        "About": "https://github.com/NOKKY726/mkwii-text-generator",
-    },
+        "About": "https://github.com/nkfr26/mkwii-text-generator-streamlit"
+    }
 )
 
 if "color" not in st.session_state:

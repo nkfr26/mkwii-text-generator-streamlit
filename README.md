@@ -1,19 +1,20 @@
-# MKWii Text Generator
-![Demo](https://github.com/NOKKY726/mkwii-text-generator/assets/117383835/896636c2-0638-4a4a-ac83-88980945ac64)
+# MKWii Text Generator (Streamlit)
+![Demo](https://github.com/nkfr26/mkwii-text-generator-streamlit/assets/148517866/5a5f10fe-ca4d-4df2-9dd6-f2f4f53d0922)
 
 ## URL
 https://nokky-mkwii-text-generator.streamlit.app
 
 ## Overview
-マリオカートWiiのフォントを使用し、様々な文字列の画像を作成できます。
+This is the web version of [MKWii Text Generator (Tkinter)](https://github.com/nkfr26/mkwii-text-generator-tkinter/).  
+This allows you to create Mario Kart Wii text in different strings.
 
 ## Description
-使用することができる文字は A～Z 1～9 : . + - / です。  
-1～9 - / には2つ目のフォントが用意されており、ダブルクォート ("") で囲むことにより使用できます。  
-また、ダブルクォートで囲んだ空白は、通常の空白の4分の1の長さとなっています。  
-微調整は <> で行うことができます。(> x 5 = " ")  
-右クリックから画像を保存し、サムネイル等にご利用ください。  
-テーマの変更は、右上のハンバーガーボタン -> Setting から行えます。
+The characters that can be used are A-Z 1-9 : . + - /  
+The second font is provided for 1-9 - / and can be used by enclosing them in double quotes (").  
+Also, the space enclosed in double quotes is a quarter length of the normal space.  
+Fine adjustment can be done with <> (> x 5 = " ").  
+Right-click to save the image and please use it for thumbnail, etc.  
+Theme can be changed via the kebab menu (︙) in the top right corner -> Settings.
 
 ## Input Example
 ```
@@ -24,10 +25,10 @@ lap " 1"  00:00.000
 
 ## Requirement
 - Windows 11
-- Python 3.10.8
-- Streamlit 1.22.0
-- Pillow 9.5.0
-- NumPy 1.24.3
+- Python 3.11.8
+- Streamlit 1.31.1
+- Pillow 10.2.0
+- NumPy 1.26.4
 
 ## Usage
 ```
@@ -38,7 +39,7 @@ streamlit run src/app.py
 ```
 
 ## Author
-[Twitter](https://twitter.com/nkfrom_mkw/)
+[Twitter](https://twitter.com/nkfr26/)
 
 ## License
-[MIT](https://github.com/NOKKY726/mkwii-text-generator/blob/main/LICENSE/)
+[MIT](https://github.com/nkfr26/mkwii-text-generator-streamlit/blob/main/LICENSE/)

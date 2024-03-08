@@ -13,17 +13,16 @@ def new(mode, size, color1, color2, orientation) -> Image:
         for y in range(height):
             draw.line(
                 [(0, y), (width, y)],
-                fill=calc_color(mode, y / (height - 1), color1, color2),
+                fill=calc_color(mode, y / (height - 1), color1, color2)
             )
     elif orientation == "Horizontal":
         for x in range(width):
             draw.line(
                 [(x, 0), (x, height)],
-                fill=calc_color(mode, x / (width - 1), color1, color2),
+                fill=calc_color(mode, x / (width - 1), color1, color2)
             )
 
     return im
-
 
 def calc_color(mode, position, color1, color2) -> tuple:
     if isinstance(color1, str):

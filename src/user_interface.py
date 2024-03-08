@@ -21,17 +21,17 @@ class UserInterface:
         self.selectbox = st.sidebar.selectbox(
             "selectbox",
             ("Yellow", "White", "Single Color", "Multi Color", "Gradient"),
-            label_visibility="collapsed",
+            label_visibility="collapsed"
         )
 
         self.set_option()
 
         left, right = st.sidebar.columns(2)
         with left:
-            link1 = "[Developer's Twitter](https://twitter.com/nkfrom_mkw/)"
+            link1 = "[Developer's Twitter](https://twitter.com/nkfr26/)"
             st.markdown(link1, True)
         with right:
-            link2 = "[README](https://github.com/NOKKY726/mkwii-text-generator/)"
+            link2 = "[README](https://github.com/nkfr26/mkwii-text-generator-streamlit/)"
             st.markdown(link2, True)
 
         self.mobile = st.sidebar.checkbox("Mobile")
